@@ -83,3 +83,54 @@ button, a { font: inherit; } button { cursor: pointer; } a { color: inherit; tex
 .profile-card { display: flex; align-items: center; gap: 14px; padding: 20px; border: 1px solid rgba(224,179,68,.28); border-radius: 16px; background: linear-gradient(115deg,#1c192d,#11172c); }.avatar { display: grid; place-items: center; width: 58px; height: 58px; border: 1px solid #dcb453; border-radius: 50%; color: #f3cb62; background: linear-gradient(145deg,#674899,#171a31); }.avatar svg { width: 27px; }.profile-card h2 { margin: 0 0 3px; font-size: 18px; }.profile-card p { margin: 0; color: #858b9f; font-size: 10px; }.profile-level { margin-left: auto; color: #e6b943; font-size: 9px; font-weight: 800; }.profile-actions { display: grid; grid-template-columns: repeat(3,1fr); gap: 9px; margin: 14px 0 27px; }.profile-actions button { display: flex; align-items: center; gap: 9px; border: 1px solid #272d46; border-radius: 12px; padding: 13px 11px; background: #0e1324; color: #e1b84d; text-align: left; }.profile-actions button svg { width: 18px; }.profile-actions span { color: #d1d4df; font-size: 10px; font-weight: 700; }.profile-actions small { color: #747b90; font-size: 8px; font-weight: 400; }.history-card { padding: 18px; border: 1px solid #242a40; border-radius: 15px; background: #0d1221; }.history-row { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-top: 1px solid #1d2234; }.history-row img { width: 34px; height: 42px; border-radius: 6px; object-fit: cover; }.history-row span { display: flex; flex: 1; flex-direction: column; gap: 3px; }.history-row b { color: #e9ebf2; font-size: 11px; }.history-row small { color: #747b91; font-size: 9px; }.history-row > svg { width: 14px; color: #d9af43; }.logout-button { display: flex; align-items: center; gap: 7px; margin-top: 15px; border: 1px solid #4d2939; border-radius: 10px; padding: 10px 13px; background: rgba(113,37,63,.13); color: #d98295; font-size: 10px; }.logout-button svg { width: 14px; }
 @media (max-width: 700px) { .internal-page { padding-top: 15px; }.internal-header { margin-bottom: 16px; }.internal-header h1 { font-size: 28px; }.side-panel { top: 55px; right: 10px; width: 205px; }.promo-hero { min-height: 180px; padding: 20px; border-radius: 14px; }.promo-hero h2 { font-size: 25px; }.promo-hero > svg { width: 76px; height: 76px; }.offer-grid { gap: 7px; margin-top: 10px; }.offer-card { padding: 12px 10px; border-radius: 11px; }.offer-card h3 { margin-top: 9px; font-size: 11px; }.offer-card p { min-height: 50px; font-size: 9px; }.offer-card button { font-size: 8px; }.support-cards { grid-template-columns: 1fr; gap: 8px; }.support-cards article { padding: 14px; }.support-cards article > svg { width: 20px; }.support-cards h3 { margin: 9px 0 4px; font-size: 13px; }.support-cards p { min-height: auto; margin-bottom: 9px; }.profile-card { padding: 15px; }.profile-actions { gap: 6px; }.profile-actions button { gap: 5px; padding: 11px 7px; }.profile-actions button svg { width: 15px; }.profile-actions span { font-size: 9px; }.profile-actions small { font-size: 7px; }.history-card { padding: 14px; } }
 
+
+/* Jogos demo interativos — créditos virtuais */
+.game-card { cursor: pointer; }
+.game-art { width: 100%; border: 0; padding: 0; cursor: pointer; color: inherit; }
+.game-overlay { position: fixed; z-index: 100; inset: 0; display: grid; place-items: center; padding: 18px; background: rgba(3,5,12,.82); backdrop-filter: blur(10px); overflow-y: auto; }
+.demo-game { width: min(100%, 720px); max-height: calc(100vh - 30px); overflow: auto; border: 1px solid rgba(229,185,74,.28); border-radius: 22px; background: #0c1020; box-shadow: 0 25px 80px rgba(0,0,0,.65), 0 0 45px rgba(126,77,224,.16); }
+.demo-game-head { display: grid; grid-template-columns: 42px 1fr auto; align-items: center; gap: 12px; padding: 15px 18px; border-bottom: 1px solid #20263a; }
+.demo-game-head h2 { margin: 3px 0 0; font-size: 20px; }
+.icon-button { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid #30364b; border-radius: 10px; background: #13182a; color: #ddd; cursor: pointer; }
+.icon-button svg { width: 18px; }
+.virtual-balance { min-width: 130px; text-align: right; }
+.virtual-balance small { display: block; color: #777f94; font-size: 8px; }
+.virtual-balance strong { color: #e9bf55; font-size: 14px; }
+.demo-art { position: relative; height: 190px; overflow: hidden; }
+.demo-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.demo-art-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,7,15,.08), rgba(5,7,15,.82)); }
+.demo-title { position: absolute; left: 22px; bottom: 17px; color: #fff; font-size: 26px; font-weight: 800; letter-spacing: -.04em; }
+.slot-machine { padding: 22px; }
+.reels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 510px; margin: 0 auto; }
+.reel { display: grid; place-items: center; min-height: 120px; border: 1px solid rgba(229,185,74,.42); border-radius: 16px; background: radial-gradient(circle at 50% 35%, #252b45, #111627 65%); font-size: 54px; box-shadow: inset 0 1px rgba(255,255,255,.1), 0 12px 25px rgba(0,0,0,.3); }
+.reel-spinning { animation: reelPulse .16s infinite alternate; }
+@keyframes reelPulse { from { transform: translateY(-3px); filter: blur(.5px); } to { transform: translateY(3px); filter: blur(1.4px); } }
+.game-message { min-height: 22px; margin: 15px 0 8px; text-align: center; color: #a6adc0; font-size: 12px; font-weight: 700; }
+.win-message { color: #f2c65b; }
+.bet-controls { display: flex; align-items: center; justify-content: center; gap: 15px; margin: 10px auto 14px; }
+.bet-controls button { width: 38px; height: 38px; border: 1px solid #30364a; border-radius: 10px; background: #141a2b; color: #e9bf55; font-size: 20px; cursor: pointer; }
+.bet-controls div { min-width: 140px; text-align: center; }
+.bet-controls small { display: block; color: #737b90; font-size: 8px; }
+.bet-controls strong { display: block; margin-top: 3px; color: #fff; font-size: 13px; }
+.spin-button { display: flex; align-items: center; justify-content: center; gap: 8px; width: min(100%, 280px); margin: 0 auto; padding: 13px 18px; border: 1px solid #e4b84c; border-radius: 12px; background: linear-gradient(135deg,#e7bd52,#9f711f); color: #0b0e18; font-size: 13px; font-weight: 900; cursor: pointer; box-shadow: 0 8px 25px rgba(211,165,58,.18); }
+.spin-button:disabled { opacity: .65; cursor: not-allowed; }
+.spin-button svg { width: 17px; }
+.spin-icon { animation: rotate .55s linear infinite; }
+@keyframes rotate { to { transform: rotate(360deg); } }
+.paytable { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.paytable span { padding: 5px 8px; border: 1px solid #252b40; border-radius: 7px; color: #7f879b; font-size: 8px; }
+.demo-warning { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 0; padding: 12px 18px 16px; color: #6f778c; text-align: center; font-size: 8px; }
+.demo-warning svg { width: 13px; color: #54c9ac; flex: 0 0 auto; }
+.history-symbols { min-width: 105px; font-size: 18px; }
+.empty-history { color: #747c90; font-size: 11px; }
+@media (max-width: 600px) {
+  .game-overlay { padding: 8px; align-items: end; }
+  .demo-game { max-height: calc(100vh - 16px); border-radius: 18px; }
+  .demo-game-head { grid-template-columns: 36px 1fr; padding: 12px; }
+  .virtual-balance { grid-column: 2; text-align: left; }
+  .demo-art { height: 150px; }
+  .demo-title { left: 15px; bottom: 13px; font-size: 21px; }
+  .slot-machine { padding: 15px 12px; }
+  .reels { gap: 6px; }
+  .reel { min-height: 92px; border-radius: 12px; font-size: 39px; }
+}
